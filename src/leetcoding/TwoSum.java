@@ -54,6 +54,6 @@ public class TwoSum {
     		}
     		map.put(nums[i], i);
     	}
-    	return new int[] {1, 2, 3};
+    	throw new IllegalArgumentException("No two sum solution");
     }
 }
