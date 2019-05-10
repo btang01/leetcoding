@@ -8,26 +8,22 @@ public class ReverseLinkedList {
 		
 		Node(int d){
 			data = d;
-			next = null;
 		}
 	}
 	
 	// create a linked list
 	
-	public void reverseLinkedList(Node myNode){
-		Node head = null;
-		Node current = myNode;
+	public Node reverseLinkedList(Node head){
+		Node nextTemp = null;
+		Node current = head;
 		Node previous = null;
 		
-		if(current != null && current.next == null){
-			System.out.println("Reversal done");
-		}
-		
 		while(current != null){
-			head = myNode;
-			current = head.next;
-			previous = head;
+			nextTemp = current.next;
 			current.next = previous;
+			previous = current;
+			current = nextTemp;
 		}
+		return previous;
 	}
 }
