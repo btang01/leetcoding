@@ -1,6 +1,6 @@
 package leetcoding;
 
-public class BubbleSort {
+public class AlgoBubbleSort {
 	
 	public static void main(String[] args){
 		int[] numbers = {9, 3, 45, 6};
