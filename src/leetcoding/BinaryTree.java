@@ -89,25 +89,19 @@ public class BinaryTree {
 	
 	// In Order Traversal --> left, root, right
 	public ArrayList<Integer> inOrderTraversal(Node root){
-		ArrayList<Integer> result = new ArrayList<>();	
+		ArrayList<Integer> result = new ArrayList<>();
 		Stack<Node> myStack = new Stack<>();
 		
-		if(root == null){
-			return result;
-		}
-		
-		Node current = root;
-		myStack.push(current);
-		
-		while(current.left != null|| !myStack.isEmpty()){
-			while(current != null){
-				myStack.add(current);
-				current = current.left;
+		while(root != null || !myStack.isEmpty()){
+			if(root != null){
+				myStack.push(root);
+				root = root.left;
+			} else {
+				root = myStack.pop();
+				result.add(root.value);
+				root = root.right;
 			}
-			current = myStack.pop();
-			result.add(current.value);
-			current = current.right;
-		}	
+		}
 		return result;
 	}
 }
