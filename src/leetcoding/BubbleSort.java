@@ -2,12 +2,26 @@ package leetcoding;
 
 public class BubbleSort {
 	
-	public void bubbleSort(int[] nums){
+	public static void main(String[] args){
+		int[] numbers = {9, 3, 45, 6};
 		
-		int numsLength = nums.length;
+		for(int i = 0; i < numbers.length; i++){
+			System.out.println(numbers[i]);
+		}
 		
-		for(int i = 0; i < numsLength; i++){
-			for(int j = 1; j < (numsLength - 1); j++){
+		bubbleSort(numbers);
+		
+		for(int i = 0; i < numbers.length; i++){
+			System.out.println(numbers[i]);
+		}
+	}
+	
+	public static void bubbleSort(int[] nums){
+		
+		int n = nums.length;
+		
+		for(int i = 0; i < n-1; i++){
+			for(int j = 0; j < n-i-1; j++){
 				
 				if(nums[j] > nums[j+1]){
 					int holdOldNum = nums[j];
