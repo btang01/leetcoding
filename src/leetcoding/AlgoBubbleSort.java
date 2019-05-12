@@ -16,6 +16,11 @@ public class AlgoBubbleSort {
 		}
 	}
 	
+	// Worst + Avg Case Time Complexity O(n^2)
+	// Best Case Time Complexity O(n)
+	// Aux Space O(1)
+	// Sorting in Place = Yes
+	// Stable = Yes
 	public static void bubbleSort(int[] nums){
 		
 		int n = nums.length;
