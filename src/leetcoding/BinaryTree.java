@@ -59,7 +59,7 @@ public class BinaryTree {
 		return res1 || res2;
 	}
 	
-	// root, then left tree, then right
+	// root, left, right
 	// this is cool, popping stacks
 	public ArrayList<Integer> preorderTraversal(Node root){
 		ArrayList<Integer> result = null;
@@ -83,6 +83,31 @@ public class BinaryTree {
 				myStack.push(myNode.left);
 			}
 		}
+		return result;
+	}
+	
+	
+	// In Order Traversal --> left, root, right
+	public ArrayList<Integer> inOrderTraversal(Node root){
+		ArrayList<Integer> result = new ArrayList<>();	
+		Stack<Node> myStack = new Stack<>();
+		
+		if(root == null){
+			return result;
+		}
+		
+		Node current = root;
+		myStack.push(current);
+		
+		while(current.left != null|| !myStack.isEmpty()){
+			while(current != null){
+				myStack.add(current);
+				current = current.left;
+			}
+			current = myStack.pop();
+			result.add(current.value);
+			current = current.right;
+		}	
 		return result;
 	}
 }
