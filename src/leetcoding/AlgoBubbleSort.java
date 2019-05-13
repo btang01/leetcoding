@@ -5,8 +5,10 @@ public class AlgoBubbleSort {
 	public static void main(String[] args){
 		int[] numbers = {9, 3, 45, 6};
 		
-		for(int i = 0; i < numbers.length; i++){
-			System.out.println(numbers[i]);
+		for(int i = 0; i < 10; i++){
+			for(int j = 0; j<10; j++){
+				System.out.println("Outer index: " + i + "Inner Index: " + j);
+			}
 		}
 		
 		bubbleSort(numbers);
